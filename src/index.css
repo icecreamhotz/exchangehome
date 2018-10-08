@@ -12,3 +12,90 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+@media screen and (max-width: 991px) {
+  .ui.menu.navbartop a.item:not(:first-child){ display:none; }
+  .ui.menu.navbartop .right.menu a.item.icon { display:block !important; font-size:1.2rem;}
+  .ui.segment { padding:0}
+}
+
+
+.ui.menu .right.menu a.item.icon {
+  display:none;
+}
+
+
+.fixed-top {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 999;
+}
+
+.hero {
+  background-image: url("https://unsplash.it/1500?random");
+  background-size: cover;
+  background-position: center;
+  width: 500wh;
+  height: 100vh;
+  display: flex;
+}
+
+.center-content {
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  margin: auto;
+}
+.center-content h3, .center-content h5 {
+  color: white;
+  line-height: 1;
+}
+.center-content h3 {
+  text-transform: uppercase;
+  font-size: 2em;
+  text-align: center;
+}
+.center-content h5 {
+  font-size: 1em;
+  font-weight: normal;
+  margin-top: 20px;
+}
+
+.flex-row {
+  flex-direction: row;
+  margin-top: 50px;
+}
+
+.language-choose {
+  width: 100%;
+  background: transparent !important;
+  color:white !important;
+}
+
+.ui.dropdown.language-choose:not(.button)>.default.text {
+  color:white;
+}
+
+.ui.selection.visible.dropdown.language-choose>.text:not(.default) {
+  color:white;
+}
+
+.date {
+  color:#848484;
+  white-space:nowrap;
+}
+
+.owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  margin-top: 10px; }
