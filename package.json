@@ -1,7 +1,7 @@
 {
   "name": "exchangehome",
   "version": "0.1.0",
-  "private": false,
+  "private": true,
   "homepage": "https://icecreamhotz.github.io/exchangehome/",
   "dependencies": {
     "@babel/runtime": "7.0.0-beta.55",
@@ -18,7 +18,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "clean": "rm -rf node_modules/gh-pages/.cache"
   },
   "eslintConfig": {
     "extends": "react-app"
