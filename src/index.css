@@ -13,11 +13,20 @@ code {
     monospace;
 }
 
+/* navbar menu css */
+
 @media screen and (max-width: 991px) {
   .ui.menu.navbartop a.item:not(:first-child){ display:none; }
   .ui.menu.navbartop .right.menu a.item.icon { display:block !important; font-size:1.2rem;}
   .ui.segment { padding:0}
 }
+
+@media screen and (max-width: 768px) {
+  .ui.vertical.divider:after, .ui.vertical.divider:before {
+    height: 0;
+  }
+}
+
 
 .tel-navbar {
   color: white;
@@ -46,6 +55,10 @@ code {
 .fixed-top.scrolled a.item , .fixed-top.scrolled  a.active.item , .fixed-top.scrolled  .right.menu a.item .tel-navbar{
   color:black !important;
 }
+
+/* --- */
+
+/* --- content */
 
 .hero {
   background-image: url("https://unsplash.it/1500?random");
@@ -101,19 +114,6 @@ code {
   white-space:nowrap;
 }
 
-.owl-demo .item img{
-  display: block;
-  width: 100%;
-  height: auto;
-}
-
-.owl-theme .owl-nav.disabled + .owl-dots {
-  position: absolute;
-  bottom: 5px;
-  left: 0;
-  right: 0;
-  margin-top: 10px; 
-}
 
 .dropdown-content {
   display: none;
@@ -142,6 +142,70 @@ code {
   align-items: center;
   text-align: center;
   padding: 0.7rem 0.6rem 0.5rem 1.2rem;
+}
+
+.rounded-image-guide {
+  max-width: 160px;
+  max-height: 160px;
+  border-radius: 50% !important;
+}
+
+/* ---*/
+
+/* this is my css owlcarousel */
+
+.owl-dots-newline .owl-dots {
+  position:static !important;
+}
+
+.owl-carousel .owl-nav button.owl-prev, .owl-carousel .owl-nav button.owl-next { position: absolute; top: 0; bottom: 0;}
+
+.owl-nav .owl-prev {
+  left: 50px;
+}
+
+.owl-nav .owl-next {
+  right: 50px;
+}
+
+.owl-theme .owl-nav [class*='owl-']:hover {
+  background: transparent !important;
+  color: #869791 !important;
+  text-decoration: none; }
+
+.owl-theme .owl-nav [class*='owl-'] {
+  outline: none;
+  font-size:30px !important;
+}
+
+.owl-theme .owl-nav .disabled {
+  opacity: 1 !important;
+}
+
+
+.owl-demo .item img{
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.owl-theme .owl-nav.disabled + .owl-dots {
+  position: absolute;
+  bottom: 5px;
+  left: 0;
+  right: 0;
+  margin-top: 10px; 
+}
+
+  /*/ -------------------- */
+
+/* footer */
+
+.background-footer {
+  background-color: #6c757d14;
+}
+.border-top-container {
+  border-top: 2px solid #646971;
 }
 
 
