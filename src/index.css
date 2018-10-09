@@ -19,11 +19,16 @@ code {
   .ui.segment { padding:0}
 }
 
+.tel-navbar {
+  color: white;
+  margin-left: 5px;
+  font-size: 1.2rem;
+  line-height: 1.0;
+}
 
 .ui.menu .right.menu a.item.icon {
   display:none;
 }
-
 
 .fixed-top {
   position: fixed !important;
@@ -31,6 +36,15 @@ code {
   right: 0;
   left: 0;
   z-index: 999;
+}
+
+.fixed-top.scrolled {
+  background-color: white !important;
+  transition: background-color 200ms linear;
+}
+
+.fixed-top.scrolled a.item , .fixed-top.scrolled  a.active.item , .fixed-top.scrolled  .right.menu a.item .tel-navbar{
+  color:black !important;
 }
 
 .hero {
@@ -98,4 +112,36 @@ code {
   bottom: 5px;
   left: 0;
   right: 0;
-  margin-top: 10px; }
+  margin-top: 10px; 
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  width: 300px;
+  overflow: hidden;
+  border: 1px solid #ddd;
+  z-index: 1;
+  margin-top: 5px;
+  padding: 15px 10px;
+  border-radius: .28571429rem;
+}
+
+.show {display: block;}
+
+.column-left-in-dropdown {
+  width: 70px;
+  background-color:white;
+  height: 40px;
+  border: 1px solid #ced4da;
+}
+
+.text-in-column-dropdown {
+  display:flex;
+  align-items: center;
+  text-align: center;
+  padding: 0.7rem 0.6rem 0.5rem 1.2rem;
+}
+
+

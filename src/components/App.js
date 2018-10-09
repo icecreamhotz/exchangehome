@@ -18,26 +18,10 @@ class App extends Component {
 }
 
 class Header extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      responsive: false
-    }
-    // This binding is necessary to make `this` work in the callback
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  handleClick() {
-    this.setState({ responsive: !this.state.responsive })
-  }
-
   render() {
-    const navbartop = 'ui inverted navbartop secondary pointing menu'
-    const isResponsive = this.state.responsive ? ' responsive' : ''
-    let responsiveIstrue = navbartop + isResponsive
     return (
-      <div class="ui inverted segment fixed-top" style={{ borderRadius: '0px', backgroundColor: 'transparent', border: 'none' }}>
-        <div className={responsiveIstrue} style={{ borderLeft: '0', borderRight: '0', borderTop: '0', borderColor: 'white' }} id="navbartop">
+      <div>
+        <div class="ui inverted navbartop secondary pointing menu fixed-top" style={{ borderLeft: '0', borderRight: '0', borderTop: '0', borderColor: 'white' }} id="navbartop">
           <a class="item">
             <img src={logo} alt={logo} />
           </a>
@@ -64,7 +48,7 @@ class Header extends React.Component {
           </a>
           <div class="right menu">
             <a class="item">
-              Call.<span style={{ color: 'white', marginLeft: '5px', fontSize: '1.2rem', lineHeight: '1.0' }}> 05.555.5555</span>
+              Call.<span class="tel-navbar"> 05.555.5555</span>
             </a>
             <a class="launch icon item sidebar-toggle">
               <i class="sidebar icon"></i>
@@ -111,7 +95,23 @@ class Header extends React.Component {
 }
 
 class Content extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      show: false,
+      classDropdown: 'dropdown-content'
+    }
+
+    this.showDropdown = this.clickShowDropdown.bind(this)
+  }
+
+  clickShowDropdown() {
+    this.setState({ show: !this.state.show })
+  }
+
   render() {
+    const showIsOn = this.state.show ? ' show' : ''
+    const classNameDropdown = this.state.classDropdown + showIsOn
     return (
       <header class="hero">
         <div class="center-content">
@@ -126,8 +126,8 @@ class Content extends React.Component {
           </div>
           <div class="ui grid centered mt-20">
             <div class="two wide computer fourteen wide tablet fourteen wide mobile column">
-              <select name="country" class="ui search selection dropdown ml-10">
-                <option value="" selected>Codominium</option>
+              <select name="country" class="ui search selection dropdown">
+                <option value="" selected>Condominium</option>
                 <option>Townhouse</option>
                 <option>All</option>
                 <option>Singlehouse</option>
@@ -135,18 +135,34 @@ class Content extends React.Component {
               </select>
             </div>
             <div class="two wide computer fourteen wide tablet fourteen wide mobile column">
-              <select name="country" class="ui search selection dropdown ml-10">
-                <option value="">State</option>
-                <option>Alabama</option>
-                <option>Alaska</option>
-                <option>Washington</option>
-                <option>West Virginia</option>
-                <option>Wisconsin</option>
-                <option selected>Wyoming</option>
-              </select>
+              <button class="ui search selection dropdown icon" onClick={this.showDropdown}>Price<i class="dropdown icon"></i></button>
+              <div className={classNameDropdown}>
+                <div class="ui form">
+                  <div class="ui action fluid input">
+                    <div class="column-left-in-dropdown">
+                      <span class="text-in-column-dropdown">MIN</span>
+                    </div>
+                    <input type="text" name="first-name" placeholder="ANY" style={{borderTopLeftRadius:'0',borderBottomLeftRadius:'0'}} />
+                    <div class="column-left-in-dropdown">
+                      <span class="text-in-column-dropdown">THB</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="ui form pt-10">
+                  <div class="ui action fluid input">
+                    <div class="column-left-in-dropdown">
+                      <span class="text-in-column-dropdown">MIN</span>
+                    </div>
+                    <input type="text" name="first-name" placeholder="ANY" style={{borderTopLeftRadius:'0',borderBottomLeftRadius:'0'}} />
+                    <div class="column-left-in-dropdown">
+                      <span class="text-in-column-dropdown">THB</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="five wide computer fourteen wide tablet fourteen wide mobile column">
-              <div class="ui action input ml-10">
+              <div class="ui action input">
                 <input type="text" id="postalCode05" placeholder="Area, BTS & MRT station or Property name" />
                 <button class="ui button icon">
                   <i class="search icon"></i>
@@ -165,23 +181,23 @@ class Content extends React.Component {
 class ArticleSelection extends React.Component {
   render() {
     return (
-      <div class="ui container">
+      <div class="ui">
         <div class="ui text">
           <div class="ui mt-50">
             <div class="ui"><h1>We meticulously select the best property especially for you</h1></div>
             <div class="ui mt-25">Get updated news about all property types including condo, townhouse, apartment, service apartment, and estate</div>
           </div>
         </div>
-        <div class="ui three column stackable grid mt-25 left">
-          <div class="column left aligned">
-            <div class="ui card">
-                <OwlCarousel
+        <div class="ui grid mt-25 centered">
+          <div class="five wide computer five wide tablet sixteen wide mobile column left">
+            <div class="ui card centered aligned">
+              <OwlCarousel
                 className="owl-theme owl-carousel owl-demo"
                 items={1}
-                >
-                  <div class="item"><img src={condo1} alt={condo1}/></div>
-                  <div class="item"><img src={condo2} alt={condo2}/></div>
-                </OwlCarousel>
+              >
+                <div class="item"><img src={condo1} alt={condo1} /></div>
+                <div class="item"><img src={condo2} alt={condo2} /></div>
+              </OwlCarousel>
               <div class="content">
                 <div class="row">
                   <h3 class="header">Chaing Mai Super Condo</h3>
@@ -209,15 +225,15 @@ class ArticleSelection extends React.Component {
               </div>
             </div>
           </div>
-          <div class="column left aligned">
-            <div class="ui card">
-            <OwlCarousel
+          <div class="five wide computer five wide tablet sixteen wide mobile column left">
+            <div class="ui card centered aligned">
+              <OwlCarousel
                 className="owl-theme owl-carousel owl-demo"
                 items={1}
-                >
-                  <div class="item"><img src={condo2} alt={condo2}/></div>
-                  <div class="item"><img src={condo1} alt={condo1}/></div>
-                </OwlCarousel>
+              >
+                <div class="item"><img src={condo2} alt={condo2} /></div>
+                <div class="item"><img src={condo1} alt={condo1} /></div>
+              </OwlCarousel>
               <div class="content">
                 <div class="row">
                   <h3 class="header">Chaing Mai Super Condo</h3>
@@ -245,15 +261,15 @@ class ArticleSelection extends React.Component {
               </div>
             </div>
           </div>
-          <div class="column left aligned">
-            <div class="ui card">
-            <OwlCarousel
+          <div class="five wide computer five wide tablet sixteen wide mobile column left">
+            <div class="ui card centered aligned">
+              <OwlCarousel
                 className="owl-theme owl-carousel owl-demo"
                 items={1}
-                >
-                  <div class="item"><img src={condo1} alt={condo1}/></div>
-                  <div class="item"><img src={condo2} alt={condo2}/></div>
-                </OwlCarousel>
+              >
+                <div class="item"><img src={condo1} alt={condo1} /></div>
+                <div class="item"><img src={condo2} alt={condo2} /></div>
+              </OwlCarousel>
               <div class="content">
                 <div class="row">
                   <h3 class="header">Chaing Mai Super Condo</h3>
