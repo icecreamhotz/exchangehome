@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import condo1 from '../img/condo1.jpg';
-import condo2 from '../img/condo2.jpg';
+import condo1 from '../../img/condo1.jpg';
+import condo2 from '../../img/condo2.jpg';
 import OwlCarousel from 'react-owl-carousel';
 
 class ArticleSelection extends React.Component {
@@ -8,7 +8,7 @@ class ArticleSelection extends React.Component {
       return (
         <article class="ui pb-50">
           <div class="ui text">
-            <div class="ui mt-50">
+            <div class="ui center aligned grid mt-50">
               <div class="ui"><h1>We meticulously select the best property especially for you</h1></div>
               <div class="ui mt-25">Get updated news about all property types including condo, townhouse, apartment, service apartment, and estate</div>
             </div>
@@ -123,12 +123,10 @@ class ArticleSelection extends React.Component {
               </div>
             </div>
           </div>
-          <div class="ui text">
-            <div class="ui mt-50">
+            <div class="ui center aligned grid mt-50">
               <div class="ui inverted">
                 <button class="ui inverted secondary button">View All Hot Deal</button>
               </div>
-            </div>
           </div>
         </article>
       )

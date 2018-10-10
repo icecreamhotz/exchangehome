@@ -1,19 +1,25 @@
 import React, { Component } from 'react';
-import condo1 from '../img/condo1.jpg';
-import condo2 from '../img/condo2.jpg';
-import condo3 from '../img/condo3.jpg';
-import condo4 from '../img/condo4.jpg';
-import person from '../img/person.jpg';
+import condo1 from '../../img/condo1.jpg';
+import condo2 from '../../img/condo2.jpg';
+import condo3 from '../../img/condo3.jpg';
+import condo4 from '../../img/condo4.jpg';
+import person from '../../img/person.jpg';
 import OwlCarousel from 'react-owl-carousel';
 
 class HelpContainer extends React.Component {
     render() {
         return (
             <div class="ui pb-10 pt-50">
-                <h1>Help you to be sure in making decisions</h1>
-                <h4>Read recent updated news and articles of insights about real estate from leading expertise</h4>
-                <div class="ui container three column stackable grid mt-20 left aligned">
-                    <div class="column">
+                <div class="ui center aligned grid">
+                    <div class="row">
+                        <h1>Help you to be sure in making decisions</h1>
+                    </div>
+                    <div class="row">
+                        <h4>Read recent updated news and articles of insights about real estate from leading expertise</h4>
+                    </div>
+                </div>
+                <div class="ui centered left aligned container grid column mt-20">
+                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
                         <div class="ui card fluid ">
                             <a class="image" href="#">
                                 <img src={condo3} alt={condo3} />
@@ -26,7 +32,7 @@ class HelpContainer extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div class="column">
+                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
                         <div class="ui card fluid ">
                             <a class="image" href="#">
                                 <img src={condo3} alt={condo3} />
@@ -39,7 +45,7 @@ class HelpContainer extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div class="column">
+                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
                         <div class="ui card fluid ">
                             <a class="image" href="#">
                                 <img src={condo3} alt={condo3} />
@@ -52,9 +58,7 @@ class HelpContainer extends React.Component {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="ui container three column stackable grid mt-20 left aligned">
-                    <div class="column">
+                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
                         <div class="ui card fluid ">
                             <a class="image" href="#">
                                 <img src={condo4} alt={condo4} />
@@ -67,7 +71,7 @@ class HelpContainer extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div class="column">
+                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
                         <div class="ui card fluid ">
                             <a class="image" href="#">
                                 <img src={condo4} alt={condo4} />
@@ -80,7 +84,7 @@ class HelpContainer extends React.Component {
                             </div>
                         </div>
                     </div>
-                    <div class="column">
+                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
                         <div class="ui card fluid ">
                             <a class="image" href="#">
                                 <img src={condo4} alt={condo4} />
@@ -94,7 +98,9 @@ class HelpContainer extends React.Component {
                         </div>
                     </div>
                 </div>
-                <button class="ui inverted secondary button mt-50">View all articles</button>
+                <div class="ui center aligned grid pt-50 pb-30">
+                    <button class="ui inverted secondary button">View all articles</button>
+                </div>
                 <div class="ui fluid pb-40 pt-40">
                     <OwlCarousel
                         className="owl-theme owl-demo"
@@ -115,8 +121,14 @@ class HelpContainer extends React.Component {
                     </OwlCarousel>
                 </div>
                 <div class="ui fluid pb-40 pt-40">
-                    <h1>Feel confidence in investing with advice from expertise</h1>
-                    <h4>Gain experience that is beyond expectation with advice from Thailand leading expertise in Real Estate Property</h4>
+                    <div class="ui center aligned grid">
+                        <div class="row">
+                             <h1>Feel confidence in investing with advice from expertise</h1>
+                        </div>
+                        <div class="row">
+                            <h4>Gain experience that is beyond expectation with advice from Thailand leading expertise in Real Estate Property</h4>
+                        </div>
+                    </div>
                     <div class="mt-50">
                         <OwlCarousel
                             className="owl-theme owl-demo owl-dots-newline"

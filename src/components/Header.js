@@ -1,38 +1,44 @@
 import React, { Component } from 'react';
 import logo from '../img/logo.svg';
+import { NavLink } from "react-router-dom";
+ import {withRouter} from 'react-router-dom';
+
 
 class Header extends React.Component {
     render() {
+      const { match, location, history } = this.props;
+      const bgNavbar = (this.props.location !== '/' ? 'black' : 'transparent')
+      const fontColorNavbar = (this.props.location === '/' ? 'black' : 'white')
       return (
         <div>
-          <div class="ui inverted navbartop secondary pointing menu fixed-top" style={{ borderLeft: '0', borderRight: '0', borderTop: '0', borderColor: 'white' }} id="navbartop">
+          <div class="ui inverted navbartop secondary pointing menu fixed-top" style={{backgroundColor:bgNavbar, color:fontColorNavbar, borderLeft: '0', borderRight: '0', borderTop: '0', borderColor: 'white' }} id="navbartop">
             <a class="item">
               <img src={logo} alt={logo} />
             </a>
             <a class="active item">
-              Home
+              <NavLink to="/">Home</NavLink>
             </a>
             <a class="item">
-              Rent
+              <NavLink to="/rent">Rent</NavLink>
             </a>
             <a class="item">
-              List your Property
+              <NavLink to="/property">List your Property</NavLink>
             </a>
             <a class="item">
-              New & Articles
+              <NavLink to="/news">New & Articles</NavLink>
             </a>
             <a class="item">
-              Webboard
+              <NavLink to="/webboard">Webboard</NavLink>
             </a>
             <a class="item">
-              About & Services
+              <NavLink to="/about">About & Services</NavLink>
             </a>
             <a class="item">
-              Contact us
+              <NavLink to="/contract">Contact us</NavLink>
             </a>
             <div class="right menu">
               <a class="item">
-                Call.<span class="tel-navbar"> 05.555.5555</span>
+                Call.<span class="tel-navbar" style={{color:fontColorNavbar}}> 05.555.5555</span>
               </a>
               <a class="launch icon item sidebar-toggle">
                 <i class="sidebar icon"></i>
@@ -77,5 +83,10 @@ class Header extends React.Component {
       )
     }
   }
+
+  
+
+const ShowTheLocationWithRouter = withRouter(Header);
+
 
 export default Header;

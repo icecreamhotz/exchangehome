@@ -12,7 +12,7 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link href="https://fonts.googleapis.com/css?family=Basic" rel="stylesheet">
     <link rel="stylesheet" href="css/dist/semantic.min.css">
-    <link rel="stylesheet" href="css/dist/etc.css">
+    <link rel="stylesheet" href="css/dist/sass/exchangehome.css">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -66,5 +66,7 @@ $(function () {
 	  $nav.toggleClass('scrolled', $(this).scrollTop() > $nav.height());
 	});
 });
+
+ $('.ui.radio.checkbox').checkbox();
 
 </script>

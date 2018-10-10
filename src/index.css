@@ -29,7 +29,6 @@ code {
 
 
 .tel-navbar {
-  color: white;
   margin-left: 5px;
   font-size: 1.2rem;
   line-height: 1.0;
@@ -48,12 +47,12 @@ code {
 }
 
 .fixed-top.scrolled {
-  background-color: white !important;
+  background-color: white;
   transition: background-color 200ms linear;
 }
 
 .fixed-top.scrolled a.item , .fixed-top.scrolled  a.active.item , .fixed-top.scrolled  .right.menu a.item .tel-navbar{
-  color:black !important;
+  color:black;
 }
 
 /* --- */
@@ -74,6 +73,7 @@ code {
   flex-direction: column;
   align-items: center;
   margin: auto;
+  text-align: center;
 }
 .center-content h3, .center-content h5 {
   color: white;
@@ -82,7 +82,6 @@ code {
 .center-content h3 {
   text-transform: uppercase;
   font-size: 2em;
-  text-align: center;
 }
 .center-content h5 {
   font-size: 1em;
@@ -175,7 +174,7 @@ code {
 
 .owl-theme .owl-nav [class*='owl-'] {
   outline: none;
-  font-size:30px !important;
+  font-size:1.875rem !important;
 }
 
 .owl-theme .owl-nav .disabled {
@@ -201,9 +200,6 @@ code {
 
 /* footer */
 
-.background-footer {
-  background-color: #6c757d14;
-}
 .border-top-container {
   border-top: 2px solid #646971;
 }
