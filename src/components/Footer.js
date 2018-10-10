@@ -4,10 +4,10 @@ class Footer extends React.Component {
     render() {
         return (
             <div class="ui">
-                <div class="ui fluid bg-blackpale pt-40 pb-80">
+                <div class="ui fluid bg-blackpale pb-80">
                 <div class="ui container left aligned grid">
                     <div class="row">
-                        <div class="five wide column text-gray">
+                        <div class="five wide computer sixteen wide mobile column text-gray mt-40">
                             <h5>Currency</h5>
                             <select class="ui dropdown">
                                 <option value="">Gender</option>
@@ -21,7 +21,7 @@ class Footer extends React.Component {
                                 <option value="0">Female</option>
                             </select>
                         </div>
-                        <div class="three wide column border-top-container mr-30 pt-30">
+                        <div class="three wide computer sixteen wide mobile column border-top-container mr-30 mt-40 pt-30">
                             <h5 class="text-gray">Property Search</h5>
                             <div class="ui list text-white pt-20">
                                 <div class="item">Rent Condo in Laos</div>
@@ -32,7 +32,7 @@ class Footer extends React.Component {
                                 <div class="item">Rent Condo in Laos</div>
                             </div>
                         </div>
-                        <div class="three wide column left aligned border-top-container mr-30 pt-30">
+                        <div class="three wide computer sixteen wide mobile column border-top-container mr-30 mt-40 pt-30">
                             <h5 class="text-gray">Property Search</h5>
                             <div class="ui list text-white pt-20">
                                 <div class="item">Rent Condo in Laos</div>
@@ -43,7 +43,7 @@ class Footer extends React.Component {
                                 <div class="item">Rent Condo in Laos</div>
                             </div>
                         </div>
-                        <div class="two wide column left aligned border-top-container pt-30">
+                        <div class="two wide computer sixteen wide mobile column border-top-container mt-40 pt-30">
                             <h5 class="text-gray">Other</h5>
                             <div class="ui list text-white pt-20">
                                 <div class="item">New & Articles</div>
