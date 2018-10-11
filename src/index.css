@@ -19,6 +19,7 @@ code {
   .ui.menu.navbartop a.item:not(:first-child){ display:none; }
   .ui.menu.navbartop .right.menu a.item.icon { display:block !important; font-size:1.2rem;}
   .ui.segment { padding:0}
+  .full-width-below-computer { width: 100% }
 }
 
 @media screen and (max-width: 768px) {
@@ -46,14 +47,28 @@ code {
   z-index: 999;
 }
 
-.fixed-top.scrolled {
-  background-color: white;
+.fixed-top.home a.item , .fixed-top.home  a.active.item , .fixed-top.home  .right.menu a.item {
+  color:white!important;
+}
+
+.fixed-top.article {
+  background-color: black !important;
+}
+
+.fixed-top.article a.item , .fixed-top.article  a.active.item , .fixed-top.article  .right.menu a.item .tel-navbar{
+  color:white!important;
+}
+
+.fixed-top.home.scrolled {
+  background-color: white !important;
   transition: background-color 200ms linear;
 }
 
-.fixed-top.scrolled a.item , .fixed-top.scrolled  a.active.item , .fixed-top.scrolled  .right.menu a.item .tel-navbar{
-  color:black;
+.fixed-top.home.scrolled .item , .fixed-top.home.scrolled  a.active.item , .fixed-top.home.scrolled  .right.menu a.item {
+  color:black!important;
 }
+
+
 
 /* --- */
 
@@ -204,4 +219,14 @@ code {
   border-top: 2px solid #646971;
 }
 
+/* icon property */
 
+.property-icon {
+  width: 160px;
+  height: 160px;
+  background-color: #ededed;
+  border-radius: 50%;
+  margin: 25px auto;
+  text-align: center;
+  padding-top: 30px;
+}

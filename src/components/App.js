@@ -5,6 +5,7 @@ import './App.css';
 import Header from './Header.js';
 import Home from './home/Home.js';
 import Property from './property/Property.js';
+import Article from './articles/Article.js';
 import Footer from './Footer.js';
 import Error from './error/error.js';
 
@@ -23,11 +24,12 @@ class App extends Component {
           <Switch>
             <Route path="/" component={Home} exact />
             <Route path="/property" component={Property} />
+            <Route path="/article" component={Article} />
             <Route component={Error} />
           </Switch>
+          <Footer />
           </div>
         </BrowserRouter>
-        <Footer />
 
       </div>
     )

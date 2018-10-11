@@ -5,23 +5,23 @@ class Footer extends React.Component {
         return (
             <div class="ui">
                 <div class="ui fluid bg-blackpale pb-80">
-                <div class="ui container left aligned grid">
+                <div class="ui container grid">
                     <div class="row">
                         <div class="five wide computer sixteen wide mobile column text-gray mt-40">
                             <h5>Currency</h5>
-                            <select class="ui dropdown">
+                            <select class="ui dropdown full-width-below-computer">
                                 <option value="">Gender</option>
                                 <option value="1">Male</option>
                                 <option value="0">Female</option>
                             </select>
                             <h5>Measurement area</h5>
-                            <select class="ui dropdown">
+                            <select class="ui dropdown full-width-below-computer">
                                 <option value="">Gender</option>
                                 <option value="1">Male</option>
                                 <option value="0">Female</option>
                             </select>
                         </div>
-                        <div class="three wide computer sixteen wide mobile column border-top-container mr-30 mt-40 pt-30">
+                        <div class="three wide computer sixteen wide mobile column border-top-container mr-30 mt-40 pt-30 pl-0 pr-0">
                             <h5 class="text-gray">Property Search</h5>
                             <div class="ui list text-white pt-20">
                                 <div class="item">Rent Condo in Laos</div>
@@ -32,7 +32,7 @@ class Footer extends React.Component {
                                 <div class="item">Rent Condo in Laos</div>
                             </div>
                         </div>
-                        <div class="three wide computer sixteen wide mobile column border-top-container mr-30 mt-40 pt-30">
+                        <div class="three wide computer sixteen wide mobile column border-top-container mr-30 mt-40 pt-30 pl-0 pr-0">
                             <h5 class="text-gray">Property Search</h5>
                             <div class="ui list text-white pt-20">
                                 <div class="item">Rent Condo in Laos</div>
@@ -43,7 +43,7 @@ class Footer extends React.Component {
                                 <div class="item">Rent Condo in Laos</div>
                             </div>
                         </div>
-                        <div class="two wide computer sixteen wide mobile column border-top-container mt-40 pt-30">
+                        <div class="two wide computer sixteen wide mobile column border-top-container mt-40 pt-30 pl-0 pr-0">
                             <h5 class="text-gray">Other</h5>
                             <div class="ui list text-white pt-20">
                                 <div class="item">New & Articles</div>
@@ -65,7 +65,7 @@ class Footer extends React.Component {
                                 <div class="column">
                                 <div class="ui horizontal list">
                                     <a class="item">
-                                        <i class="facebook icon text-white"></i>
+                                        <i class="facebook icon"></i>
                                     </a>
                                     <a class="item">
                                         <i class="instagram icon"></i>
