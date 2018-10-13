@@ -11,6 +11,9 @@ import Contact from './contact/Contact.js';
 import Footer from './Footer.js';
 import Error from './error/error.js';
 
+import 'owl.carousel/dist/assets/owl.carousel.css'
+import 'owl.carousel/dist/assets/owl.theme.default.css'
+
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { withRouter } from 'react-router-dom';
 
