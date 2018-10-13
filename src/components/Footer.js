@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { dropdown } from './settings/Dropdown.js';
 
 class Footer extends React.Component {
+    componentDidMount(){
+        dropdown()
+    }
     render() {
         return (
             <div class="ui">

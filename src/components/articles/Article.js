@@ -5,26 +5,15 @@ import condo3 from '../../img/condo3.jpg';
 import condo4 from '../../img/condo4.jpg';
 import person from '../../img/person.jpg';
 import OwlCarousel from 'react-owl-carousel';
+import { dropdown } from '../settings/Dropdown.js';
 
 class Article extends React.Component {
+    componentDidMount(){
+        dropdown()
+    }
     render() {
         return(
-            <div class="ui fluid pt-100 pb-100">
-                <div class="ui segments grid pl-20 pr-20">
-                    <div class="middle aligned eight wide computer fifteen wide tablet column">
-                        <div class="ui breadcrumb">
-                            <a class="section">Home</a>
-                            <i class="right chevron icon divider"></i>
-                            <a class="section">Registration</a>
-                        </div>
-                    </div>
-                    <div class="middle aligned eight wide computer fifteen wide tablet column">
-                        <div class="ui icon input">
-                            <input type="text" placeholder="Search..." />
-                            <i class="inverted circular search link icon"></i>
-                        </div>
-                    </div>  
-                </div>
+            <div class="ui fluid pb-100">
                 <div class="ui center aligned container pt-50">
                     <div class="ui text container">
                         <h1 class="ui header">
@@ -58,11 +47,15 @@ class Article extends React.Component {
                         </h3>
                     </div>
                     <div class="two wide computer sixteen wide tablet column">
-                        <select class="ui fluid dropdown">
-                            <option value="">Gender</option>
-                            <option value="1">Male</option>
-                            <option value="0">Female</option>
-                         </select>
+                         <div class="ui form">
+                            <div class="field">
+                                <select class="ui dropdown">
+                                    <option value="">Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="0">Female</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="middle aligned one wide computer sixteen wide tablet column">
                         <h3 class="ui header">
@@ -70,11 +63,15 @@ class Article extends React.Component {
                         </h3>
                     </div>
                     <div class="two wide computer sixteen wide tablet column">
-                        <select class="ui fluid dropdown">
-                            <option value="">Gender</option>
-                            <option value="1">Male</option>
-                            <option value="0">Female</option>
-                         </select>
+                        <div class="ui form">
+                            <div class="field">
+                                <select class="ui dropdown">
+                                    <option value="">Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="0">Female</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="middle aligned one wide computer sixteen wide tablet column">
                         <h3 class="ui header">
@@ -82,11 +79,15 @@ class Article extends React.Component {
                         </h3>
                     </div>
                     <div class="two wide computer sixteen wide tablet column">
-                        <select class="ui fluid dropdown">
-                            <option value="">Gender</option>
-                            <option value="1">Male</option>
-                            <option value="0">Female</option>
-                         </select>
+                        <div class="ui form">
+                            <div class="field">
+                                <select class="ui dropdown">
+                                    <option value="">Gender</option>
+                                    <option value="1">Male</option>
+                                    <option value="0">Female</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                     <div class="right aligned seven wide computer sixteen wide tablet column">
                         <div class="ui icon input">

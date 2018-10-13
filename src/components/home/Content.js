@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { dropdown } from '../settings/Dropdown.js';
 
 class Content extends React.Component {
+    componentDidMount(){
+        dropdown()
+    }
     constructor() {
       super()
       this.state = {

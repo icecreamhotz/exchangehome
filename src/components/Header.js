@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import logo from '../img/logo.svg';
-import { NavLink } from "react-router-dom";
- import {withRouter} from 'react-router-dom';
+import { NavLink , withRouter } from "react-router-dom";
 
 
 class Header extends React.Component {
     render() {
-      const { match, location, history } = this.props;
+      const { match, location, history } = this.props
       let classHeader = "ui navbartop inverted secondary pointing menu "
       const bgNavbar = (location.pathname === '/' ? classHeader + 'fixed-top home' : classHeader + 'fixed-top article')
       const fontColorNavbar = (location.pathname === '/' ? 'black' : 'white')
@@ -22,7 +21,7 @@ class Header extends React.Component {
             <NavLink to="/article" className={"item"} activeClassname='active'>New & Articles</NavLink>
             <NavLink to="/webboard" className={"item"} activeClassname='active'>Webboard</NavLink>
             <NavLink to="/about" className={"item"} activeClassname='active'>About & Services</NavLink>
-            <NavLink to="/contract" className={"item"} activeClassname='active'>Contact us</NavLink>
+            <NavLink to="/contact" className={"item"} activeClassname='active'>Contact us</NavLink>
             <div class="right menu">
               <a class="item">
                 Call.<span class="tel-navbar"> 05.555.5555</span>
@@ -42,7 +41,7 @@ class Header extends React.Component {
             <NavLink to="/article" className={"item"} activeClassname='active'>New & Articles</NavLink>
             <NavLink to="/webboard" className={"item"} activeClassname='active'>Webboard</NavLink>
             <NavLink to="/about" className={"item"} activeClassname='active'>About & Services</NavLink>
-            <NavLink to="/contract" className={"item"} activeClassname='active'>Contact us</NavLink>
+            <NavLink to="/contact" className={"item"} activeClassname='active'>Contact us</NavLink>
             <div class="ui selection dropdown language-choose">
               <i class="dropdown icon"></i>
               <div class="default text">Language</div>

@@ -1,8 +1,11 @@
 import React, { Component } from 'react';
 import listproperty1 from '../../img/listproperty1.png';
-
+import { dropdown } from '../settings/Dropdown.js';
 
 class Property extends React.Component {
+    componentDidMount(){
+        dropdown()
+    }
     render() {
     return(
         <div class="ui container pt-100 pb-100">
