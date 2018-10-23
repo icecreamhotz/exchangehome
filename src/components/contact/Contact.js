@@ -7,6 +7,7 @@ window.$ = window.jQuery = require('jquery')
 require('semantic-ui/js/semantic.min.js')
 
 class Contact extends React.Component {
+
     componentDidMount(){       
         $('.ui.menu a.item').on('click', function() {   
         $(this)
@@ -15,84 +16,78 @@ class Contact extends React.Component {
             .removeClass('active'); 
         })
     }
+
     render() {
         return(
-            <div class="ui container pb-100">
-                <div class="ui center aligned text container">
+            <div class="ui fluid container pb-100">
+                <div class="ui container center aligned">
                     <h1>CONTACT US</h1> 
                     <h1 class="ui header">
-                        <div class="sub header">COMPANY NAME</div>
+                        <div class="sub header">Wit Realy Co.,LTD - Bangkok Branch</div>
                     </h1>
-                </div>
-                <div class="ui grid pt-50">
-                    <div class="ui black three item menu">
-                        <a class="item active">Editorials</a>
-                        <a class="item">Reviews</a>
-                        <a class="item">Upcoming Events</a>
-                    </div>
-                </div>
-                <div class="ui column grid pt-30">
-                    <div class="ui six wide computer column">
-                        <div class="row">
-                            <h4>Call : (66)2-688-7555</h4>
-                            <h4>Call : (66)2-688-7555</h4>
-                            <h4>Call : (66)2-688-7555</h4>
-                            <h4>Call : (66)2-688-7555</h4>
-                            <h4>Call : (66)2-688-7555</h4>
-                            <h4>Call : (66)2-688-7555</h4>
-                        </div>
-                          <div class="row pt-20">
-                            <h4>location map</h4>
-                            <img src={condo1} alt={condo1} style={{ maxWidth: '100%' }} />
+                    <div class="ui grid pt-50">
+                        <div class="ui black one item menu">
+                            <a class="item active">Editorials</a>
                         </div>
                     </div>
-                    <div class="ui centered aligned eight wide computer column grid">
-                        <div class="row">
-                            <h3 class="ui header">
-                                To contact us please use the form below
-                                <div class="sub header">*Please fill in the information</div>
-                            </h3>
-                        </div>
-                        <div class="row">
-                            <div class="ui form">
+                    <div class="ui center aligned column grid pt-30">
+                        <div class="ui form column">
                             <div class="field">
-                                <input type="text" placeholder="placeholder"/>
+                                <h3 class="ui header">
+                                    WRITE TO US
+                                    <div class="sub header">*Please fill in the information</div>
+                                </h3>
                             </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="ui form">
                             <div class="field">
-                                <input type="text" placeholder="placeholder"/>
+                                    <input type="text" placeholder="Your name*"/>
                             </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="ui form">
                             <div class="field">
-                                <input type="text" placeholder="placeholder"/>
+                                    <input type="text" placeholder="Your email*"/>
                             </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="ui form">
                             <div class="field">
-                                <input type="text" placeholder="placeholder"/>
+                                    <input type="text" placeholder="Subject"/>
                             </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="ui form">
                             <div class="field">
-                                 <textarea ></textarea>
+                                    <textarea placeholder="Your message"></textarea>
                             </div>
+                            <button class="ui secondary button">
+                                SEND
+                            </button>
+                        </div>
+                    </div>
+                    <h1>ADDRESS</h1>
+                    <div class="ui two column grid pt-50">
+                        <div class="column noteleft feedtextcontent bg-olive">
+                            <div class="ui items">
+                                <div class="item">
+                                    <div class="content">
+                                    <a class="header">Bangkok</a>
+                                    <div class="contract description">
+                                        <p>Wit Realty Co.,LTD – Bangkok Branch</p>
+                                        <p>3/12, Chai-Sanguan Building 1575/1, New Petchburi Rd., Mukkasan, Ratchathevi, Bangkok, 10400</p>
+                                        <h5>Tel: +66 985 288 637</h5>
+                                    </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                        <button class="ui secondary button">
-                            Sbumit
-                        </button>
+                         <div class="column noteright feedtextcontent bg-wit">
+                            <div class="ui items">
+                                <div class="item">
+                                    <div class="content">
+                                    <a class="header">Chiang Mai</a>
+                                    <div class="contract description">
+                                        <p>Wit Realty Co.,LTD – Chiangmai Branch</p>
+                                        <p>169/48, Star Avenue 5, Chiangmai-Hangdong Rd., Hangdong, Chiangmai 50230</p>
+                                        <h5>Tel: +66 989 019 658</h5>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         )
     }

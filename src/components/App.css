@@ -142,3 +142,7 @@
   border-radius: 50%;
   animation: floatingShadow 3s ease-in-out infinite;
 }
+
+.image-gallery-slide img {
+  width:100% !important;
+}

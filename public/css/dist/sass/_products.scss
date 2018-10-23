@@ -1,0 +1,39 @@
+.fixed-top.home a.item , .fixed-top.home  a.active.item , .fixed-top.home  .right.menu a.item {
+    color:$white!important;
+  }
+  
+  .fixed-top.article {
+    background-color: $witcolor !important;
+  }
+  
+  .fixed-top.article a.item , .fixed-top.article  a.active.item , .fixed-top.article  .right.menu a.item .tel-navbar{
+    color:$white!important;
+  }
+  
+  .fixed-top.home.scrolled {
+    background-color: $witcolor !important;
+    transition: background-color 200ms linear;
+  }
+  
+  .fixed-top.home.scrolled .item , .fixed-top.home.scrolled  a.active.item , .fixed-top.home.scrolled  .right.menu a.item {
+    color:$white !important;
+  }
+  
+
+.bg-wit {
+    background-color: $witcolor !important;
+    
+}
+
+.ui.secondary.inverted.pointing.menu .active.item {
+    border-color: $gray !important;
+}
+
+.text-wit {
+    color: $witcolor;
+}
+
+.ui.list.footer>a.item i.icon{color:white}.ui.list.footer>a.item i.icon:hover{
+    color: $gray; 
+} 
+

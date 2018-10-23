@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from '../img/logo.svg';
+import logo from '../img/logo.png';
 import { NavLink , withRouter } from "react-router-dom";
 
 
@@ -12,19 +12,16 @@ class Header extends React.Component {
       return (
         <div>
           <div className={bgNavbar} style={{borderLeft: '0', borderRight: '0', borderTop: '0', borderColor: 'white' }} id="navbartop">
-            <a class="item">
-              <img src={logo} alt={logo} />
-            </a>
+            <NavLink exact to="/" className={"item none"}><img src={logo} alt={logo} style={{width:'100px',height:'30px'}}/></NavLink>
             <NavLink exact to="/" className={"item"} activeClassname='active'>Home</NavLink>
-            <NavLink to="/rent" className={"item"} activeClassname='active'>Rent</NavLink>
             <NavLink to="/property" className={"item"} activeClassname='active'>List your Property</NavLink>
+            <NavLink to="/condo" className={"item"} activeClassname='active'>Condo</NavLink>
             <NavLink to="/article" className={"item"} activeClassname='active'>New & Articles</NavLink>
-            <NavLink to="/webboard" className={"item"} activeClassname='active'>Webboard</NavLink>
-            <NavLink to="/about" className={"item"} activeClassname='active'>About & Services</NavLink>
             <NavLink to="/contact" className={"item"} activeClassname='active'>Contact us</NavLink>
+            <NavLink to="/career" className={"item"} activeClassname='active'>Career</NavLink>
             <div class="right menu">
               <a class="item">
-                Call.<span class="tel-navbar"> 05.555.5555</span>
+                Call.<span class="tel-navbar">+66 985 288 637</span>
               </a>
               <a class="launch icon item sidebar-toggle">
                 <i class="sidebar icon"></i>
@@ -36,20 +33,12 @@ class Header extends React.Component {
           </div>
           <div class="ui sidebar inverted vertical menu">
             <NavLink exact to="/" className={"item"} activeClassname='active'>Home</NavLink>
-            <NavLink to="/rent" className={"item"} activeClassname='active'>Rent</NavLink>
             <NavLink to="/property" className={"item"} activeClassname='active'>List your Property</NavLink>
+            <NavLink to="/condo" className={"item"} activeClassname='active'>Condo</NavLink>
             <NavLink to="/article" className={"item"} activeClassname='active'>New & Articles</NavLink>
-            <NavLink to="/webboard" className={"item"} activeClassname='active'>Webboard</NavLink>
-            <NavLink to="/about" className={"item"} activeClassname='active'>About & Services</NavLink>
             <NavLink to="/contact" className={"item"} activeClassname='active'>Contact us</NavLink>
-            <div class="ui selection dropdown language-choose">
-              <i class="dropdown icon"></i>
-              <div class="default text">Language</div>
-              <div class="menu">
-                <div class="item" data-value="1">English</div>
-                <div class="item" data-value="0">Thai</div>
-              </div>
-            </div>
+            <NavLink to="/career" className={"item"} activeClassname='active'>Career</NavLink>
+
           </div>
         </div>
       )

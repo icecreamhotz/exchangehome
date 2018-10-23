@@ -6,14 +6,41 @@ import condo4 from '../../img/condo4.jpg';
 import person from '../../img/person.jpg';
 import OwlCarousel from 'react-owl-carousel';
 import { dropdown } from '../settings/Dropdown.js';
+import axios from 'axios'
+import Loading from '../settings/Loading.js';
+import { NavLink } from "react-router-dom";
 
 class Article extends React.Component {
-    componentDidMount(){
-        dropdown()
+   
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            data: [],
+            loaded: false,
+        }
+
+        this.fetchArticleData = this.fetchArticleData.bind(this)
     }
+
+    async componentDidMount(){
+        dropdown()
+        await this.fetchArticleData()
+    }
+
+    fetchArticleData = () => {
+        axios.get('http://www.witrealty.co/api/forums').then((response) => {
+            this.setState({data: response.data, loaded: true})
+            console.log(this.state.data)
+        })
+    }
+
     render() {
+        const { loaded } = this.state
+        const sendLoaded = (loaded ? true : false)
         return(
             <div class="ui fluid pb-100">
+                <Loading loaded={sendLoaded} />
                 <div class="ui center aligned container pt-50">
                     <div class="ui text container">
                         <h1 class="ui header">
@@ -26,7 +53,7 @@ class Article extends React.Component {
                 </div>
                 <div class="ui container pt-30">
                     <OwlCarousel
-                        className="owl-carousel owl-theme full-width-img-carousel "
+                        className="owl-carousel owl-theme full-width-img-carousel"
                         loop
                         items={1}
                     >
@@ -50,9 +77,9 @@ class Article extends React.Component {
                          <div class="ui form">
                             <div class="field">
                                 <select class="ui dropdown">
-                                    <option value="">Gender</option>
-                                    <option value="1">Male</option>
-                                    <option value="0">Female</option>
+                                    <option value="">Empty</option>
+                                    <option value="1">Empty</option>
+                                    <option value="0">Empty</option>
                                 </select>
                             </div>
                         </div>
@@ -66,9 +93,9 @@ class Article extends React.Component {
                         <div class="ui form">
                             <div class="field">
                                 <select class="ui dropdown">
-                                    <option value="">Gender</option>
-                                    <option value="1">Male</option>
-                                    <option value="0">Female</option>
+                                    <option value="">Empty</option>
+                                    <option value="1">Empty</option>
+                                    <option value="0">Empty</option>
                                 </select>
                             </div>
                         </div>
@@ -82,9 +109,9 @@ class Article extends React.Component {
                         <div class="ui form">
                             <div class="field">
                                 <select class="ui dropdown">
-                                    <option value="">Gender</option>
-                                    <option value="1">Male</option>
-                                    <option value="0">Female</option>
+                                    <option value="">Empty</option>
+                                    <option value="1">Empty</option>
+                                    <option value="0">Empty</option>
                                 </select>
                             </div>
                         </div>
@@ -97,91 +124,29 @@ class Article extends React.Component {
                     </div>
                 </div>
                 <div class="ui pt-30">
-                    <div class="ui centered left aligned grid column mt-20">
-                        <div class="five wide computer seven wide tablet fifteen wide mobile column">
-                            <div class="ui card fluid ">
-                                <a class="image" href="#">
-                                    <img src={condo3} alt={condo3} />
-                                </a>
-                                <div class="content">
-                                    <h4>Condo is awesome !!</h4>
-                                    <div class="meta">
-                                        <a>Something is wrong :(</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="five wide computer seven wide tablet fifteen wide mobile column">
-                            <div class="ui card fluid ">
-                                <a class="image" href="#">
-                                    <img src={condo3} alt={condo3} />
-                                </a>
-                                <div class="content">
-                                    <h4>Condo is awesome !!</h4>
-                                    <div class="meta">
-                                        Something is wrong :(
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="five wide computer seven wide tablet fifteen wide mobile column">
-                            <div class="ui card fluid ">
-                                <a class="image" href="#">
-                                    <img src={condo3} alt={condo3} />
-                                </a>
-                                <div class="content">
-                                    <h4>Condo is awesome !!</h4>
-                                    <div class="meta">
-                                        Something is wrong :(
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="five wide computer seven wide tablet fifteen wide mobile column">
-                            <div class="ui card fluid ">
-                                <a class="image" href="#">
-                                    <img src={condo4} alt={condo4} />
-                                </a>
-                                <div class="content">
-                                    <h4>Condo is awesome !!</h4>
-                                    <div class="meta">
-                                        Something is wrong :(
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="five wide computer seven wide tablet fifteen wide mobile column">
-                            <div class="ui card fluid ">
-                                <a class="image" href="#">
-                                    <img src={condo4} alt={condo4} />
-                                </a>
-                                <div class="content">
-                                    <h4>Condo is awesome !!</h4>
-                                    <div class="meta">
-                                        Something is wrong :(
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="five wide computer seven wide tablet fifteen wide mobile column">
-                            <div class="ui card fluid ">
-                                <a class="image" href="#">
-                                    <img src={condo4} alt={condo4} />
-                                </a>
-                                <div class="content">
-                                    <h4>Condo is awesome !!</h4>
-                                    <div class="meta">
-                                        Something is wrong :(
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="ui centered aligned container grid column mt-20">
+                        {
+                            this.state.data.map(item => {
+                                return  <div class="five wide computer seven wide tablet fifteen wide mobile column">
+                                    <NavLink exact to={"/article/"+item.id} className={"text-black"} >
+                                            <div class="ui card fluid">
+                                                {
+                                                    item[0].imgs.map(itemimg => <img src={atob(itemimg.img_base)} alt={item.forum_title} style={{minHeight:'250px',maxHeight:'250px',width:'100%',objectFit:'cover'}} /> )
+                                                }
+                                                <div class="content">
+                                                    <h4>{item.forum_title}</h4>
+                                                    <div class="meta">
+                                                        <a>Something is wrong :(</a>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                    </NavLink>
+                                        </div>
+                            })
+                        }
                     </div>
                 </div>
-                <div class="ui center aligned text container pt-30"> 
-                    <button class="ui black button">Positive Button</button>
-                </div>
-                <div class="ui center aligned text container pt-50"> 
+                {/* <div class="ui center aligned text container pt-50"> 
                     <h2 class="ui header">
                         <div class="sub header">Hot Story</div>
                     </h2>
@@ -228,7 +193,7 @@ class Article extends React.Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }

@@ -119,6 +119,9 @@
 .text-black {
   color: #111111; }
 
+.text-black:hover {
+  color: #111111; }
+
 .text-blackpale {
   color: #1111115c; }
 
@@ -799,5 +802,36 @@
 
 .ml-100 {
   margin-left: 100px !important; }
+
+.fixed-top.home a.item, .fixed-top.home a.active.item, .fixed-top.home .right.menu a.item {
+  color: #FFFFFF !important; }
+
+.fixed-top.article {
+  background-color: #02bc5b !important; }
+
+.fixed-top.article a.item, .fixed-top.article a.active.item, .fixed-top.article .right.menu a.item .tel-navbar {
+  color: #FFFFFF !important; }
+
+.fixed-top.home.scrolled {
+  background-color: #02bc5b !important;
+  transition: background-color 200ms linear; }
+
+.fixed-top.home.scrolled .item, .fixed-top.home.scrolled a.active.item, .fixed-top.home.scrolled .right.menu a.item {
+  color: #FFFFFF !important; }
+
+.bg-wit {
+  background-color: #02bc5b !important; }
+
+.ui.secondary.inverted.pointing.menu .active.item {
+  border-color: #646971 !important; }
+
+.text-wit {
+  color: #02bc5b; }
+
+.ui.list.footer > a.item i.icon {
+  color: white; }
+
+.ui.list.footer > a.item i.icon:hover {
+  color: #646971; }
 
 /*# sourceMappingURL=exchangehome.css.map */

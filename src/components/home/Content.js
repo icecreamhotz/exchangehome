@@ -37,25 +37,24 @@ class Content extends React.Component {
       const showIsOn = this.state.show ? ' show' : ''
       const classNameDropdown = this.state.classDropdown + showIsOn
       return (
-        <header class="hero">
+        <div class="hero">
           <div class="center-content">
             <h3>A door to your perfect home</h3>
             <h5>We are the expertise in finding the right house for buyers and rental with our outstanding search system.</h5>
             <div class="flex-row">
               <div class="ui buttons">
-                <button class="ui button">Home</button>
+                <button class="ui button">Buy</button>
                 <div class="or"></div>
                 <button class="ui positive button">Rent</button>
               </div>
             </div>
             <div class="ui grid centered mt-20">
               <div class="two wide computer fourteen wide tablet fourteen wide mobile column">
-                <select name="country" class="ui search selection dropdown">
-                  <option value="" selected>Condominium</option>
-                  <option>Townhouse</option>
-                  <option>All</option>
-                  <option>Singlehouse</option>
-                  <option>Land</option>
+                <select name="country" class="ui selection dropdown">
+                  <option value="1" selected>Condominium</option>
+                  <option value="2">Land</option>
+                  <option value="3">Detached House</option>
+                  <option value="4">Commercial Building</option>
                 </select>
               </div>
               <div class="two wide computer fourteen wide tablet fourteen wide mobile column" ref={node => { this.node = node}}>
@@ -96,8 +95,7 @@ class Content extends React.Component {
               </div>
             </div>
           </div>
-        </header>
-  
+        </div>
       )
     }
   }

@@ -5,12 +5,37 @@ import condo3 from '../../img/condo3.jpg';
 import condo4 from '../../img/condo4.jpg';
 import person from '../../img/person.jpg';
 import OwlCarousel from 'react-owl-carousel';
+import axios from 'axios';
+import { NavLink } from "react-router-dom";
+
 
 class HelpContainer extends React.Component {
+
+    constructor(props) {
+      super(props)
+      this.state = {
+        articledata: []
+      }
+
+      this.fetchArticlesData = this.fetchArticlesData.bind(this)
+    }
+
+    async componentDidMount() {
+      await this.fetchArticlesData()
+    }
+
+    fetchArticlesData = () => {
+      axios.get(`http://www.witrealty.co/api/forums`).then((response) => {
+        console.log(response)
+        this.setState({articledata: response.data})
+        this.props.setLoaded()
+      })
+    }
+    
     render() {
         return (
             <div class="ui pb-10 pt-50">
-                <div class="ui center aligned grid">
+                <div class="ui center aligned container grid">
                     <div class="row">
                         <h1>Help you to be sure in making decisions</h1>
                     </div>
@@ -19,87 +44,26 @@ class HelpContainer extends React.Component {
                     </div>
                 </div>
                 <div class="ui centered left aligned container grid column mt-20">
-                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
-                        <div class="ui card fluid ">
-                            <a class="image" href="#">
-                                <img src={condo3} alt={condo3} />
-                            </a>
-                            <div class="content">
-                                <h4>Condo is awesome !!</h4>
-                                <div class="meta">
-                                    <a>Something is wrong :(</a>
+                    {
+                        this.state.articledata.slice(0,3).map(item => {
+                            return <div class="five wide computer eight wide tablet sixteen wide mobile column">
+                            <NavLink exact to={"/article/"+item.id} className={"text-black"} >
+                                <div class="ui card fluid ">
+                                        {item[0].imgs.slice(0,1).map(itemimg => <img src={atob(itemimg.img_base)} alt={item.title} style={{minHeight:'250px',maxHeight:'250px',width:'100%',objectFit:'cover'}}/>)}
+                                    <div class="content">
+                                        <h4>{item.forum_title}</h4>
+                                        <div class="meta">
+                                            <a>21/10/2561</a>
+                                        </div>
+                                    </div>
                                 </div>
+                            </NavLink>
                             </div>
-                        </div>
-                    </div>
-                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
-                        <div class="ui card fluid ">
-                            <a class="image" href="#">
-                                <img src={condo3} alt={condo3} />
-                            </a>
-                            <div class="content">
-                                <h4>Condo is awesome !!</h4>
-                                <div class="meta">
-                                    Something is wrong :(
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
-                        <div class="ui card fluid ">
-                            <a class="image" href="#">
-                                <img src={condo3} alt={condo3} />
-                            </a>
-                            <div class="content">
-                                <h4>Condo is awesome !!</h4>
-                                <div class="meta">
-                                    Something is wrong :(
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
-                        <div class="ui card fluid ">
-                            <a class="image" href="#">
-                                <img src={condo4} alt={condo4} />
-                            </a>
-                            <div class="content">
-                                <h4>Condo is awesome !!</h4>
-                                <div class="meta">
-                                    Something is wrong :(
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
-                        <div class="ui card fluid ">
-                            <a class="image" href="#">
-                                <img src={condo4} alt={condo4} />
-                            </a>
-                            <div class="content">
-                                <h4>Condo is awesome !!</h4>
-                                <div class="meta">
-                                    Something is wrong :(
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="five wide computer eight wide tablet sixteen wide mobile column">
-                        <div class="ui card fluid ">
-                            <a class="image" href="#">
-                                <img src={condo4} alt={condo4} />
-                            </a>
-                            <div class="content">
-                                <h4>Condo is awesome !!</h4>
-                                <div class="meta">
-                                    Something is wrong :(
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                        })
+                    }
                 </div>
                 <div class="ui center aligned grid pt-50 pb-30">
-                    <button class="ui inverted secondary button">View all articles</button>
+                    <NavLink exact to="/article" className={"ui inverted secondary button"}>View all articles</NavLink>
                 </div>
                 <div class="ui fluid pb-40 pt-40">
                     <OwlCarousel
@@ -110,18 +74,18 @@ class HelpContainer extends React.Component {
                         loop
                         items={3}
                     >
-                        <div class="item"><img src={condo1} alt={condo1} style={{ maxHeight: '330px', maxWidth: '660px' }} /></div>
-                        <div class="item"><img src={condo2} alt={condo2} style={{ maxHeight: '330px', maxWidth: '660px' }} /></div>
-                        <div class="item"><img src={condo3} alt={condo3} style={{ maxHeight: '330px', maxWidth: '660px' }} /></div>
-                        <div class="item"><img src={condo4} alt={condo4} style={{ maxHeight: '330px', maxWidth: '660px' }} /></div>
-                        <div class="item"><img src={condo1} alt={condo1} style={{ maxHeight: '330px', maxWidth: '660px' }} /></div>
-                        <div class="item"><img src={condo2} alt={condo2} style={{ maxHeight: '330px', maxWidth: '660px' }} /></div>
-                        <div class="item"><img src={condo3} alt={condo3} style={{ maxHeight: '330px', maxWidth: '660px' }} /></div>
-                        <div class="item"><img src={condo4} alt={condo4} style={{ maxHeight: '330px', maxWidth: '660px' }} /></div>
+                        <div class="item"><img src={condo1} alt={condo1} style={{ minHeight: '100px', maxWidth: '660px' }} /></div>
+                        <div class="item"><img src={condo2} alt={condo2} style={{ minHeight: '100px', maxWidth: '660px' }} /></div>
+                        <div class="item"><img src={condo3} alt={condo3} style={{ minHeight: '100px', maxWidth: '660px' }} /></div>
+                        <div class="item"><img src={condo4} alt={condo4} style={{ minHeight: '100px', maxWidth: '660px' }} /></div>
+                        <div class="item"><img src={condo1} alt={condo1} style={{ minHeight: '100px', maxWidth: '660px' }} /></div>
+                        <div class="item"><img src={condo2} alt={condo2} style={{ minHeight: '100px', maxWidth: '660px' }} /></div>
+                        <div class="item"><img src={condo3} alt={condo3} style={{ minHeight: '100px', maxWidth: '660px' }} /></div>
+                        <div class="item"><img src={condo4} alt={condo4} style={{ minHeight: '100px', maxWidth: '660px' }} /></div>
                     </OwlCarousel>
                 </div>
-                <div class="ui fluid pb-40 pt-40">
-                    <div class="ui center aligned grid">
+                {/* <div class="ui fluid pb-40 pt-40">
+                    <div class="ui center aligned container">
                         <div class="row">
                              <h1>Feel confidence in investing with advice from expertise</h1>
                         </div>
@@ -142,7 +106,7 @@ class HelpContainer extends React.Component {
                                     <div class="eight wide computer column grid left aligned">
                                         <div class="ui items">
                                             <div class="item">
-                                                <div class="ui small image">
+                                                <div class="ui small image" style={{marginLeft:'auto',marginRight:'auto'}}>
                                                     <img class="rounded-image-guide" src={person} alt={person} />
                                                 </div>
                                                 <div class="middle aligned content">
@@ -173,7 +137,7 @@ class HelpContainer extends React.Component {
                                     <div class="eight wide computer column grid left aligned">
                                         <div class="ui items">
                                             <div class="item">
-                                                <div class="ui small image">
+                                                <div class="ui small image" style={{marginLeft:'auto',marginRight:'auto'}}>
                                                     <img class="rounded-image-guide" src={person} alt={person} />
                                                 </div>
                                                 <div class="middle aligned content">
@@ -204,7 +168,7 @@ class HelpContainer extends React.Component {
                                     <div class="eight wide computer column grid left aligned">
                                         <div class="ui items">
                                             <div class="item">
-                                                <div class="ui small image">
+                                                <div class="ui small image" style={{marginLeft:'auto',marginRight:'auto'}}>
                                                     <img class="rounded-image-guide" src={person} alt={person} />
                                                 </div>
                                                 <div class="middle aligned content">
@@ -232,7 +196,7 @@ class HelpContainer extends React.Component {
                             </div>
                         </OwlCarousel>
                     </div>
-                </div>
+                </div> */}
             </div>
         )
     }
