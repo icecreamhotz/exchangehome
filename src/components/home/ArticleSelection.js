@@ -4,6 +4,7 @@ import condo2 from '../../img/condo2.jpg';
 import OwlCarousel from 'react-owl-carousel';
 import axios from 'axios';
 import { NavLink } from "react-router-dom";
+import noimg from '../../img/noimg.png';
 
 class ArticleSelection extends React.Component {
     constructor(props) {
@@ -53,14 +54,23 @@ class ArticleSelection extends React.Component {
               return <div class="five wide computer five wide tablet sixteen wide mobile column left">
                 <NavLink exact to={"/condo/"+item.estate_id} className={"text-black"} >
                   <div class="ui card centered aligned">
-                    <OwlCarousel
-                      className="owl-theme owl-carousel owl-demo"
-                      items={1}
-                    >
-                      {item[0].imgs.map(itemimg => 
-                        <img src={atob(itemimg.img_base)} alt={item.estate_title} style={{minHeight:'230px',maxHeight:'230px',width:'100%',objectFit:'cover'}}/>
-                      )}
-                    </OwlCarousel>
+                      {
+                        (!item[0].imgs.length > 0 ? <img src={noimg} alt={noimg} style={{minHeight:'250px',maxHeight:'250px',width:'100%',objectFit:'cover'}}/>
+                          :
+                          <OwlCarousel
+                            className="owl-theme owl-carousel owl-demo full-width-img-carousel"
+                            items={1}
+                            autoplay={true}
+                          >
+                          {
+                            item[0].imgs.map(itemimg => 
+                            <div class="item">
+                              <img src={atob(itemimg.img_base)} alt={item.estate_title} style={{minHeight:'230px',maxHeight:'230px',width:'100%',objectFit:'cover'}}/>
+                            </div>)
+                        }
+                        </OwlCarousel>
+                        )
+                      }
                     <div class="content">
                       <div class="row">
                         <h2>{item.estate_title}</h2>

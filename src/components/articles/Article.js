@@ -9,6 +9,7 @@ import { dropdown } from '../settings/Dropdown.js';
 import axios from 'axios'
 import Loading from '../settings/Loading.js';
 import { NavLink } from "react-router-dom";
+import noimg from '../../img/noimg.png'
 
 class Article extends React.Component {
    
@@ -130,9 +131,24 @@ class Article extends React.Component {
                                 return  <div class="five wide computer seven wide tablet fifteen wide mobile column">
                                     <NavLink exact to={"/article/"+item.id} className={"text-black"} >
                                             <div class="ui card fluid">
-                                                {
-                                                    item[0].imgs.map(itemimg => <img src={atob(itemimg.img_base)} alt={item.forum_title} style={{minHeight:'250px',maxHeight:'250px',width:'100%',objectFit:'cover'}} /> )
+                                             {
+                                                        (!item[0].imgs.length > 0 ? <img src={noimg} alt={noimg} style={{minHeight:'250px',maxHeight:'250px',width:'100%',objectFit:'cover'}}/>
+                                                            :
+                                                            <OwlCarousel
+                                                                className="owl-theme owl-carousel owl-demo full-width-img-carousel"
+                                                                items={1}
+                                                                autoplay={true}
+                                                                >
+                                                                    {
+                                                                        item[0].imgs.map(itemimg => 
+                                                                        <div class="item">
+                                                                            <img src={atob(itemimg.img_base)} alt={item.forum_title} style={{minHeight:'250px',maxHeight:'250px',width:'100%',objectFit:'cover'}}/>
+                                                                        </div>)
+                                                                    }
+                                                            </OwlCarousel>
+                                                        )
                                                 }
+                                            
                                                 <div class="content">
                                                     <h4>{item.forum_title}</h4>
                                                     <div class="meta">

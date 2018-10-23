@@ -4,6 +4,7 @@ import axios from 'axios'
 import Loading from '../settings/Loading.js';
 import OwlCarousel from 'react-owl-carousel';
 import { NavLink } from "react-router-dom";
+import noimg from '../../img/noimg.png';
 
 class Condo extends React.Component {
    
@@ -67,7 +68,7 @@ class Condo extends React.Component {
                                                 <div class="item">
                                                     <div class="ui medium image">
                                                     {
-                                                        (item[0].imgs.length <= 1 ? <img src={atob(item[0].imgs[0].img_base)} alt={item.estate_title}  style={{minHeight:'230px',maxHeight:'230px',minWidth:'100%',objectFit:'cover'}} />
+                                                        (!item[0].imgs.length > 0 ? <img src={noimg} alt={noimg}  style={{minHeight:'230px',maxHeight:'230px',minWidth:'100%',objectFit:'cover'}} />
                                                             :
                                                             <OwlCarousel
                                                                 className="owl-theme owl-carousel owl-demo full-width-img-carousel"
