@@ -32,7 +32,6 @@ class Article extends React.Component {
     fetchArticleData = () => {
         axios.get('http://www.witrealty.co/api/forums').then((response) => {
             this.setState({data: response.data, loaded: true})
-            console.log(this.state.data)
         })
     }
 

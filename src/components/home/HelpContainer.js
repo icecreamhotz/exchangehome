@@ -26,7 +26,6 @@ class HelpContainer extends React.Component {
 
     fetchArticlesData = () => {
       axios.get(`http://www.witrealty.co/api/forums`).then((response) => {
-        console.log(response)
         this.setState({articledata: response.data})
         this.props.setLoaded()
       })
