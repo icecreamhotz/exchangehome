@@ -16,7 +16,7 @@ class Header extends React.Component {
             <NavLink exact to="/" className={"item"} activeClassname='active'>Home</NavLink>
             <NavLink to="/property" className={"item"} activeClassname='active'>List your Property</NavLink>
             <NavLink to="/condo" className={"item"} activeClassname='active'>Condo</NavLink>
-            <NavLink to="/article" className={"item"} activeClassname='active'>New & Articles</NavLink>
+            <NavLink to="/article" className={"item"} activeClassname='active'>News & Articles</NavLink>
             <NavLink to="/contact" className={"item"} activeClassname='active'>Contact us</NavLink>
             <NavLink to="/career" className={"item"} activeClassname='active'>Career</NavLink>
             <div class="right menu">
@@ -35,7 +35,7 @@ class Header extends React.Component {
             <NavLink exact to="/" className={"item"} activeClassname='active'>Home</NavLink>
             <NavLink to="/property" className={"item"} activeClassname='active'>List your Property</NavLink>
             <NavLink to="/condo" className={"item"} activeClassname='active'>Condo</NavLink>
-            <NavLink to="/article" className={"item"} activeClassname='active'>New & Articles</NavLink>
+            <NavLink to="/article" className={"item"} activeClassname='active'>News & Articles</NavLink>
             <NavLink to="/contact" className={"item"} activeClassname='active'>Contact us</NavLink>
             <NavLink to="/career" className={"item"} activeClassname='active'>Career</NavLink>
 
